@@ -4,36 +4,56 @@
 class Referate
 {
 private:
-	int _year;
-	std::string _name;
+	std::string Theme;
+	int Year;
+	int CountOfSheets;
+	std::string Author = "";
 public:
 
-	Referate(int year, std::string name)
+	Referate() {  }
+	
+	std::string GetTheme()
 	{
-		_year = year;
-		_name = name;
+		return Theme;
 	}
 
-	std::string GetName()
+	std::string GetAuthor()
 	{
-		return _name;
+		return Author;
+	}
+
+	int GetYear()
+	{
+		return Year;
+	}
+
+	int GetCountOfSheets()
+	{
+		return Year;
 	}
 
 	int GetHashCode()
 	{
-		return _name[0] % 10;
+		return Author[0] % 10;
 	}
 
 	bool operator==(Referate pus) const
 	{
-		return _year == pus._year && _name == pus._name;
+		return Year == pus.GetYear() && Author == pus.GetAuthor() && Theme == pus.GetTheme() && CountOfSheets == pus.GetCountOfSheets();
+	}
+
+	Referate(std::string theme, int year, int countOfSheets, std::string author)
+	{
+		Theme = theme;
+		Year = year;
+		CountOfSheets = countOfSheets;
+		Author = author;
 	}
 
 	std::string ToString()
 	{
-		return _name + " " + std::to_string(_year);
+		return "Тема: " + Theme + ", Год: " + std::to_string(Year) + ", Количество страниц: " + std::
+			to_string(CountOfSheets) + ", Автор: " + Author;
 	}
-
-
 };
 

@@ -1,2 +1,4 @@
 C:\Users\misha\source\repos\HashTableCplusplus\x64\Debug\HashTableCplusplus.exe
 C:\Users\misha\source\repos\HashTableCplusplus\x64\Debug\HashTableCplusplus.pdb
+E:\projectsVS\BinaryTree\HashTableCplusplus\x64\Debug\HashTableCplusplus.exe
+E:\projectsVS\BinaryTree\HashTableCplusplus\x64\Debug\HashTableCplusplus.pdb
