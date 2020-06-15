@@ -1,49 +1,50 @@
 #pragma once
 #include "Item.h"
 #include <iostream>
+#include "Referate.h"
 
-template <class T>
 class HashTable
 {
 private:
+
 	int _size;
-	vector<Item<T>*> items;
+	vector<Item<Referate>*> items;
 
 public:
+
 	HashTable(int size)
 	{
-		items.reserve(size);
 		for (int i = 0; i < size; i++)
 		{
-			auto S = new Item<T>(i);
+			auto S = new Item<Referate>(i);
 			items.push_back(S);
 		}
 		_size = size;
 	}
 
-	void Add(T item)
+	int GetSize()
 	{
-		int key = GetHash(item);
+		return _size;
+	}
+
+	void Add(Referate item)
+	{
+		int key = GetHash(item.GetAuthor());
 		items[key]->Nodes.push_back(item);
 	}
 
-	void Remove(T item)
+	void Remove(string key)
 	{
-		items[GetHash(item)]->Nodes.erase(items[GetHash(item)]->Nodes.begin());
+		int index = GetHash(key);
+		items[index]->Nodes.erase(items[index]->Nodes.begin());
 	}
 
-	bool Search(T item)
-	{
-		return find(items[GetHash(item)].Nodes.begin(), items[GetHash(item)].Nodes.end(), item) != items[GetHash(item)].Nodes.end();
+	int GetHash(string key)
+	{	
+		return key[0] % 10 % _size;
 	}
 
-	int GetHash(T item)
-	{
-		auto key = item.GetHashCode();
-		return key % _size;
-	}
-
-	vector<Item<T>*> GetList()
+	vector<Item<Referate>*> GetList()
 	{
 		return items;
 	}
@@ -62,8 +63,5 @@ public:
 			}
 		}
 	}
-
-
-
 };
 
