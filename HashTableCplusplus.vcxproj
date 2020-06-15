@@ -140,14 +140,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HashTable.cpp" />
+    <ClCompile Include="HashTableClose.cpp" />
     <ClCompile Include="HashTableCplusplus.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemClose.cpp" />
     <ClCompile Include="Referate.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="HashTableClose.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemClose.h" />
     <ClInclude Include="Referate.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
